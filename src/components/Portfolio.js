@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import request from "graphql-request";
 import ProjectCard from './ProjectCard';
-// import { graphcms } from "./Client";
+
 
 function Portfolio () {
 
@@ -10,10 +10,10 @@ function Portfolio () {
     useEffect(() => {
         const getAllProjects = async() => {
             const {projects} = await request(
-                'https://api-eu-west-2.hygraph.com/v2/cl6dwve6p0yqc01ta2laf6cg5/master',
+                process.env.REACT_APP_SECRET_KEY,
                 `
                 {
-                    projects {
+                    projects(first: 100) {
                         id
                         image {
                             url
