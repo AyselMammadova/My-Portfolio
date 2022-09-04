@@ -21,6 +21,7 @@ function Portfolio () {
                         source
                         title
                         tags
+                        order
                     }
                 }
                 `
@@ -42,7 +43,9 @@ function Portfolio () {
                 <div className="row justify-content-center">
                     <div className="col-xl-11">
                         <div className="row">
-                            {projects.map(project => 
+                            {projects.sort((a, b) => {
+                                return a.order > b.order ? -1 : a.order < b.order ? 1 : 0;
+                            }).map(project => 
                                 <ProjectCard key={project.id} project={project} />
                             )}
                         </div>
