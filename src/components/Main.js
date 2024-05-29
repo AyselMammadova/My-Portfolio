@@ -16,7 +16,7 @@ function Main() {
                                 <div className="info text-center text-md-start">
                                     <h3>Aysel Mammadova</h3>
 
-                                    <p className="mb-0">Hi, I'm Front-End Developer. I have more than 3 years of experience in this field. My goal is to constantly improve myself and increase my experience in real terms. I am eager to learn and in love with my field.</p>
+                                    <p className="mb-0">Hi, I'm Front-End Developer. I have more than 5 years of experience in this field. My goal is to constantly improve myself and increase my experience in real terms. I am eager to learn and in love with my field.</p>
                                     
                                     <div className="contact-info">
                                         Contact me:
@@ -32,7 +32,7 @@ function Main() {
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="mailto: ayselmemmedova9317@gmail.com">
+                                                <a href="mailto: ayselmammadova9317@gmail.com">
                                                     <FontAwesomeIcon icon={faEnvelope} />
                                                 </a>
                                             </li>
