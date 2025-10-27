@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone';
 
 function Main() {
     return (
@@ -16,10 +17,10 @@ function Main() {
 
                                     <p className="mb-0">Hi, I'm Front-End Developer. I have more than 6 years of experience in this field. My goal is to constantly improve myself and increase my experience in real terms. I am eager to learn and in love with my field.</p>
                                     
-                                    <div className="contact-info">
+                                    <div className="contact-info d-md-flex align-items-md-center">
                                         Contact me:
-                                        <ul className="social-media">
-                                            <li>
+                                        <ul className="social-media justify-content-center justify-content-md-start mt-3 mt-md-0">
+                                            <li className='ms-0 ms-md-4'>
                                                 <a href="https://github.com/AyselMammadova" rel="noreferrer" target="_blank">
                                                     <FontAwesomeIcon icon={faGithub} />
                                                 </a>
@@ -32,6 +33,11 @@ function Main() {
                                             <li>
                                                 <a href="mailto: ayselmammadova9317@gmail.com">
                                                     <FontAwesomeIcon icon={faEnvelope} />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="tel: +994508099175">
+                                                    <FontAwesomeIcon icon={faPhone} />
                                                 </a>
                                             </li>
                                         </ul>

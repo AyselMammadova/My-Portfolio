@@ -177,7 +177,6 @@ main {
                 font-size: 16px;
             }
             .contact-info {
-                @include display-f-nowrap;
                 margin-top: 16px;
                 .social-media {
                     @include display-f-wrap;
@@ -208,6 +207,11 @@ main {
                         &:nth-child(3) {
                             a {
                                 background-color: #c71610;
+                            }
+                        }
+                        &:nth-child(4) {
+                            a {
+                                background-color: #009933;
                             }
                         }
                         &:not(:nth-child(1)) {
