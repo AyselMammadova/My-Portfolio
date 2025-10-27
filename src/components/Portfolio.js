@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 import request from "graphql-request";
 import ProjectCard from './ProjectCard';
 
-
 function Portfolio () {
-
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
@@ -20,6 +18,7 @@ function Portfolio () {
                         }
                         source
                         title
+                        description
                         tags
                         order
                     }
@@ -34,10 +33,7 @@ function Portfolio () {
 
     }, []);
 
-
-
     return (
-        
         <div className="portfolio-list">
             <div className="container">
                 <div className="row justify-content-center">
@@ -53,19 +49,7 @@ function Portfolio () {
                 </div>
             </div>
         </div>
-
-
-
     )
 }
-
-// export const getStaticProps = async () => {
-//     const projects = await GetAllProjects();
-//     return {
-//         props: {
-//             projects
-//         }
-//     };
-// }
 
 export default Portfolio

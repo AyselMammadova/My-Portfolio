@@ -270,6 +270,10 @@ main {
             h4 {
                 text-align: center;
                 margin: 16px 0;
+
+                span {
+                    display: block;
+                }
             }
             ul {
                 @include display-f-wrap-center;

@@ -40,7 +40,7 @@ function Main() {
                             </div>
                             <div className="col-md-4 order-1 order-md-2">
                                 <div className="img-wrap mx-auto me-md-0">
-                                    <img src="/me.jpg" alt="me" />
+                                    <img src="me.jpg" alt="me" />
                                 </div>
                             </div>
                         </div>
