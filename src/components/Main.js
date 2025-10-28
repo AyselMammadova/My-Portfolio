@@ -40,6 +40,11 @@ function Main() {
                                                     <FontAwesomeIcon icon={faPhone} />
                                                 </a>
                                             </li>
+                                            <li>
+                                                <a href="Aysel-Mammadova-Resume.pdf" target="_blank" rel="noopener noreferrer">
+                                                    CV
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
