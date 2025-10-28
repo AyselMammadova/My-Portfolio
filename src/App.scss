@@ -166,14 +166,20 @@ main {
                         will-change: transform;
                         a {
                             @include display-f-nowrap-center;
-                            width: 30px;
-                            height: 30px;
-                            @include radius(50%);
                             color: $white-color;
-                            svg {
-                                height: 18px;
+                        }
+                        
+                        &:not(:last-child) {
+                            a {
+                                width: 30px;
+                                height: 30px;
+                                @include radius(50%);
+                                svg {
+                                    height: 18px;
+                                }
                             }
                         }
+
                         &:nth-child(1) {
                             a {
                                 background-color: #4078c0;
@@ -192,6 +198,13 @@ main {
                         &:nth-child(4) {
                             a {
                                 background-color: #009933;
+                            }
+                        }
+                        &:nth-child(5) {
+                            a {
+                                border: 1px solid $white-color;
+                                @include radius(4px);
+                                padding: 3px 10px;
                             }
                         }
                         &:not(:nth-child(1)) {
