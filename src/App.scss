@@ -50,18 +50,11 @@
     justify-content: center;
 }
 
-@mixin transition-300 {
-    -webkit-transition: 300ms all ease;
-    -moz-transition: 300ms all ease;
-    -o-transition: 300ms all ease;
-    transition: 300ms all ease;
-}
-
-@mixin transition-500 {
-    -webkit-transition: 500ms all ease;
-    -moz-transition: 500ms all ease;
-    -o-transition: 500ms all ease;
-    transition: 500ms all ease;
+@mixin transition($property) {
+    -webkit-transition: $property;
+    -moz-transition: $property;
+    -o-transition: $property;
+    transition: $property;
 }
 
 @mixin translateX {
@@ -89,28 +82,11 @@
     transform: translate(-50%, -50%);
 }
 
-@mixin radius-50 {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-}
-
-@mixin radius-4px {
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-    border-radius: 4px;
-}
-
-@mixin radius-25px {
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
-    border-radius: 25px;
+@mixin radius($property) {
+    border-radius: ($property);
+    -moz-border-radius: ($property);
+    -o-border-radius: ($property);
+    -webkit-border-radius: ($property);
 }
 
 @mixin p-0 {
@@ -157,10 +133,14 @@ ul {
 /* main */ 
 main {
     color: $main-color2;
-    padding: 70px 0;
+    padding: 70px 0 60px;
 
     h1 {
         font-size: 40px;
+        background: linear-gradient(90deg, rgb(178, 117, 187) 30%, rgb(29, 245, 253) 60%, rgb(69, 252, 142) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
         font-weight: bold;
         text-align: center;
         margin-bottom: 70px;
@@ -182,13 +162,13 @@ main {
                     @include display-f-wrap;
                     li {
                         margin-left: 24px;
-                        @include transition-300;
+                        @include transition(300ms all ease);
                         will-change: transform;
                         a {
                             @include display-f-nowrap-center;
                             width: 30px;
                             height: 30px;
-                            @include radius-50;
+                            @include radius(50%);
                             color: $white-color;
                             svg {
                                 height: 18px;
@@ -230,7 +210,7 @@ main {
             }   
         }
         .img-wrap {
-            border-radius: 50px;
+            @include radius(50px);
             width: 190px;
             height: 190px;
             overflow: hidden;
@@ -244,6 +224,62 @@ main {
 
 
 /* portfolio */ 
+.portfolio-list .tabs {
+    @include display-f-wrap-center;
+    gap: 10px;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #302f3d;
+    padding: 10px 0;
+
+    button {
+        background: rgba(255, 255, 255, .1);
+        border: 2px solid transparent;
+        color: #fff;
+        padding: 12px 25px;
+        @include radius(10px);
+        cursor: pointer;
+        font-size: 16px;
+        @include transition(300ms all ease);
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            @include radius(10px);
+            padding: 2px;
+            background: linear-gradient(135deg, #a78bfa, #06b6d4);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            @include transition(300ms all ease);
+        }
+
+        &.active {
+            background: rgba(167, 139, 250, .2);
+
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+}
+
 .project-box-wrap {
     margin: 15px 0;
     .project-box {
@@ -251,23 +287,23 @@ main {
         height: 440px;
         background: rgb(178,117,187);
         background: linear-gradient(90deg, rgba(178,117,187,1) 16%, rgba(29,245,253,1) 60%, rgba(69,252,142,1) 100%);
-        border-radius: 12px;
+        @include radius(12px);
         overflow: hidden;
         padding: 4px;
         color: $main-color2;
-        @include transition-300;
+        @include transition(300ms all ease);
         will-change: transform;
         figure {
             @include wh-100;
             background-color: $main-color;
             padding: 15px;
-            border-radius: 8px;
+            @include radius(8px);
             overflow: hidden;
             position: relative;
             img {
                 width: 100%;
                 height: 224px;
-                border-radius: 4px;
+                @include radius(4px);
                 object-fit: cover;
                 object-position: top;
             }
